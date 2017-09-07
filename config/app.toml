@@ -1,0 +1,13 @@
+name = "Static Site"
+address = "https://xxx.xxx"
+root_path = "/"
+
+[model.thread]
+type = "thread"
+
+[model.article]
+type = "article"
+
+[model.user]
+type = "space"
+
