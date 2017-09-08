@@ -1,0 +1,18 @@
+{
+  "tid":1,
+  "title":"xxxxxx",
+  "posts":[
+    {
+      "pid":1,
+      "username":"garfeng",
+      "home_path":"/user/1",
+      "context":"ddddd",
+      "time":"2016.1.2 19:00"
+    }, {
+      "pid":2,
+      "username":"garfeng2",
+      "home_path":"/user/2",
+      "context":"你好",
+      "time":"2016.1.2 20:00"
+    }]
+}

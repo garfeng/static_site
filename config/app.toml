@@ -1,13 +1,23 @@
 name = "Static Site"
 address = "https://xxx.xxx"
 root_path = "/"
+database = "http://localhost:8080/test_data"
+
+#markdown or bbcode
+text_type = "markdown"
 
 [model.thread]
+name = "thread"
 type = "thread"
+title = "帖子"
 
 [model.article]
+name = "article"
 type = "article"
+title = "文章"
 
 [model.user]
-type = "space"
+name = "user"
+type = "list"
+title = "空间"
 

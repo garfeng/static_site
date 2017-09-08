@@ -4,7 +4,7 @@ import React, {
 import ReactDOM from 'react-dom';
 import {
 	Navbar as NavbarBootstrap,
-	NavLink,
+	//NavLink,
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
@@ -14,15 +14,6 @@ import {
 	Col,
 	Collapse
 } from 'reactstrap';
-
-class OneItem extends Component {
-	render() {
-		const className = window.data.class.SmallName == this.props.name ? "active" : "";
-		return <NavItem>
-			<NavLink href={`/m/${this.props.name}`} className={className}>{this.props.children}</NavLink>
-		</NavItem>
-	}
-}
 
 export default class Navbar extends Component {
 	constructor(props) {
@@ -48,11 +39,10 @@ export default class Navbar extends Component {
 			<NavbarBootstrap toggleable className="fixed-top navbar-inverse bg-primary">
         <NavbarToggler right onClick={this.toggle} />
         <Container>
-          <NavbarBrand href="/">Name</NavbarBrand>
+          <NavbarBrand href={this.props.config.address}>{this.props.config.name}</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
-	          <OneItem name="app">App</OneItem>
-	          <OneItem name="game">Game</OneItem>
+	          {this.props.children}
           </Nav>
         </Collapse>
       </Container>
@@ -61,5 +51,3 @@ export default class Navbar extends Component {
 	}
 }
 
-const node = document.getElementById("react_navbar");
-ReactDOM.render(<Navbar/>, node);
