@@ -25,7 +25,9 @@
     "react-router-dom": "*",
     "react-transition-group": "*",
     "reactstrap": "*",
-    "toml":"*"
+    "toml":"*",
+    "bbcode":"*",
+    "algoliasearch":"*"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

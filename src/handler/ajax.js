@@ -9,6 +9,8 @@ const callbackAlias = (callback) => {
       } else if (typeof data == "object") {
         callback(data)
       }
+    } else if (typeof callback == "function") {
+      callback();
     }
   }
 }
@@ -28,6 +30,29 @@ export const GetListData = (model = "", page = "", callback = null) => {
     return;
   }
   const url = `${window.config.database}/${model}/list/${page}.json`;
+  
+  $.ajax({
+    url:url,
+    error:callbackAlias(callback),
+    success:callbackAlias(callback)
+  });
+}
+
+export const GetDetailsOfList = (model="",callback = null) => {
+  if (model == "") {
+    return;
+  }
+  const url = `${window.config.database}/details/${model}.json`;
+
+  $.get(url,callbackAlias(callback));
+}
+
+export const GetByPath = (path="",callback=null) => {
+  if (path == "") {
+    return ;
+  }
+
+  const url = `${window.config.database}/${path}.json`;
 
   $.get(url,callbackAlias(callback));
 }

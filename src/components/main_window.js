@@ -4,9 +4,14 @@ import React, {
 import ReactDOM from 'react-dom';
 
 import {NavItem,Container,Row,Col} from 'reactstrap';
-import {HashRouter,NavLink,Link,Route} from 'react-router-dom';
+import {HashRouter,NavLink,Link,Route,Redirect} from 'react-router-dom';
 
-import NavBar from './navbar.js';
+import algoliasearch from 'algoliasearch';
+
+import NavBar from './navbar';
+
+import Footer from './footer'
+import Index from './index';
 
 export default class MainWindow extends Component{
   constructor(props) {
@@ -15,6 +20,8 @@ export default class MainWindow extends Component{
     this.AllModelComponents = {};
     this.allModelNameList = [];
     this.initializeAllModel();
+    const config = props.config;
+    this.DefaultClass = (props) => (<Index {...props} info={config} />);
   }
 
   initializeAllModel(){
@@ -47,20 +54,38 @@ export default class MainWindow extends Component{
       );
   }
 
+  search(){
+    var client = algoliasearch("5NL7A4OHNQ", "5ad511be53e2aeac1fdca2aadb251004");
+    var index = client.initIndex('test');
+    index.search('测试', function(err, content) {
+    console.log(content.hits);
+});
+
+  }
+
   render(){
+    this.search();
     return (
     <HashRouter basename="/">
-    <Container className="fluid">
+    <div>
     <NavBar config={this.props.config}>
      {this.allModelNameList.map(this.NavItem.bind(this))} 
     </NavBar>
       <div style={{height:100}}> </div>
+    <Container>
       <Row>
-      <Col lg={10}>
+      <Col lg={8} md={8} sm={12} xs={12}>
+        <Route exact path="/" component={this.DefaultClass} />
         {this.allModelNameList.map(this.Model.bind(this))}
+      </Col>
+      <Col lg={4} md={4} sm={12} xs={12}>
+        侧边栏，可以放一些大家频繁使用的链接，
+        比如MOG汉化说明合集。或xx的xx教程导航帖。
       </Col>
       </Row>
     </Container>
+    <Footer/>
+    </div>
     </HashRouter>);
   }
 }

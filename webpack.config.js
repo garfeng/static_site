@@ -21,7 +21,7 @@ const extractOptions = Object.assign({
 module.exports = {
     entry: {
         main: './src/index.js',
-        vendor: ["react", 'react-dom', 'jquery', 'react-router', 'reactstrap', 'tether','toml']
+        vendor: ["react", 'react-dom', 'jquery', 'react-router', 'reactstrap', 'tether','toml','bbcode','marked','highlight.js','algoliasearch']
     },
 
     output: {

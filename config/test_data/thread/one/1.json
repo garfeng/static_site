@@ -6,7 +6,7 @@
       "pid":1,
       "username":"garfeng",
       "home_path":"/user/1",
-      "context":"ddddd",
+      "context":"[size=7]这是一篇测试[/size]\n\n链接测试\n[url=http://or226o0mi.bkt.clouddn.com/introduction.html]节省流量的游戏介绍[/url]\n\n\n\n[list=1]\n[*]列表测试\n[*]列表策士2\n[/list]\n\n\n图片测试\n[img]http://ww1.sinaimg.cn/large/a6a49aa8ly1fj4huz163oj20fk30f7fi.jpg[/img]\n",
       "time":"2016.1.2 19:00"
     }, {
       "pid":2,
