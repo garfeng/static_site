@@ -1,7 +1,7 @@
 name = "Static Site"
-address = "https://xxx.xxx"
-root_path = "/"
-database = "http://localhost:8080/test_data"
+address = "https://garfeng.github.io/static_site/"
+root_path = "/static_site/"
+database = "https://garfeng.github.io/static_site/config/test_data/"
 
 default_model = "thread"
 

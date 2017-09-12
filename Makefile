@@ -1,9 +1,10 @@
 all:clean
+	if [ ! -d gh-pages ] ; then mkdir gh-pages ; fi
 	@webpack --optimize-minimize -p 
-	@gzip dist/static/*/*
-	@gzip -l dist/static/*/*
-	@gzip -d dist/static/*/*
-	cp dist/static/js/* ../static/js/ -rf
+
+static_file:
+	cp config gh-pages/ -rf
+	cp dist/* gh-pages/ -rf
 
 clean:
 	@rm dist/* -rf
@@ -14,7 +15,7 @@ dev:clean
 	#cp src/index.html dist/
 	#cp src/electron_setup.js dist/
 	#cp src/package.json dist/
-	cp dist/static/js/* ../static/js/ -rf
+	cp test_data dist/ -rf
 
 env:
 	NODE_ENV=development cnpm install
