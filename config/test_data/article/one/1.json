@@ -1,8 +1,0 @@
-{
-  "id":1,
-  "title":"你好，世界！",
-  "username":"garfeng",
-  "home_path":"/user/1",
-  "time":"2016",
-  "context":"[pre]var a = 1;\nvar b = 2;\nconsole.log(a == b)[/pre]"
-}
